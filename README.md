@@ -7,3 +7,7 @@ same time .By sharing the auto fare bored my each individual reduces and also ha
 Solution:
 
 This application tries to solve this problem my creating a small interactive application which creates a small events and notifies all the students who are traveling to the same place on the same time . 
+
+**IDE**
+The above applications front end was constructed in netbeans.
+
