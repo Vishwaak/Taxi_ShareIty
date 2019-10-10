@@ -1,13 +1,15 @@
 # Taxi_ShareIty
 
 Problem:
-Students of our community face the problem of not able to share the auto even though they are traveling to the same place and
-same time .By sharing the auto fare bored my each individual reduces and also has a postive effect on the carbon-dioxide and mono-oxide released.
+Students of our community face the problem of not being able to share a cab even though they are traveling to the same destination at the same time .By carpooling the fare for each individual gets dropped by a huge amount and this brings out a positive effect to the environment. 
 
 Solution:
-
-This application tries to solve this problem my creating a small interactive application which creates a small events and notifies all the students who are traveling to the same place on the same time . 
+This application tries to solve this problem my creating an interactive application which creates events by grouping students based on their destination and time for pick-up and notifies them.
 
 **IDE**
-The above applications front end was constructed in netbeans.
+The above application's front end is constructed using netbeans.
 
+Team Members:
+@Vishwaak (Vishwaak Chandran T)
+@the-ym3 (Yaswant R)
+@samp30k1 (Sai Sampath KV)
