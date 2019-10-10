@@ -7,6 +7,7 @@ public class logging extends javax.swing.JFrame {
      * Creates new form logging
      */
     public logging() {
+
         initComponents();
     }
 
@@ -15,12 +16,16 @@ public class logging extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+
+        jPasswordField1 = new javax.swing.JPasswordField();
+
+        jButton1 = new javax.swing.JButton();
+
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
 
@@ -33,7 +38,7 @@ public class logging extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Welcome to Taxi_Sharity");
 
-        jLabel3.setText("Passoword");
+        jLabel3.setText("Password");
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -104,11 +109,13 @@ public class logging extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
+
                 new logging().setVisible(true);
             }
         });
@@ -116,13 +123,17 @@ public class logging extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+
     private javax.swing.JPasswordField jPasswordField1;
+
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
