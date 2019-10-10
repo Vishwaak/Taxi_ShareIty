@@ -1,5 +1,7 @@
 package minewine.taxishareity.persistance.dbo;
 
+import minewine.taxishareity.persistance.util.PasswordEncoder;
+
 /**
  * @author andrea.esposito
  *
@@ -12,9 +14,7 @@ public class LoginDBO {
 
 	public LoginDBO(final String username, final String password){
 		this.username = username;
-		//Here i suggest to crypt the password
-		this.password = password;
-
+		this.password = PasswordEncoder.encodePassword(password);
 	}
 
 	public String getUsername() {
