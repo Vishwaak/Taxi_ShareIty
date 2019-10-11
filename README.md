@@ -5,6 +5,7 @@ Students of our community face the problem of not being able to share a cab even
 
 **Solution**:
 This application tries to solve this problem my creating an interactive application which creates events by grouping students based on their destination and time for pick-up and notifies them.
+And each Students should be able to select who is sharing with him/her.
 
 **IDE**
 The above application's front end is constructed using netbeans.
