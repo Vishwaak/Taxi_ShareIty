@@ -73,9 +73,9 @@ public class Login_Form extends javax.swing.JFrame {
 
         jTextField5.setText("email_address");
 
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setText("Password ");
 
-        jPasswordField2.setText("jPasswordField2");
+        jPasswordField2.setText("Password ");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Driver" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
