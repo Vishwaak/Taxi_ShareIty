@@ -1,5 +1,7 @@
 package minewine.taxishareity.persistance.dbo;
 
+import minewine.taxishareity.Encrypt;
+
 /**
  * @author andrea.esposito
  *
@@ -12,8 +14,8 @@ public class LoginDBO {
 
 	public LoginDBO(final String username, final String password){
 		this.username = username;
-		//Here i suggest to crypt the password
-		this.password = password;
+                this.password = password;
+		//this.password = Encrypt.toHash(password);
 
 	}
 
@@ -24,11 +26,11 @@ public class LoginDBO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	//TODO i suggest to implements in this methods something to crypt and decrypt the password
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+                this.password = password;
+		//this.password = Encrypt.toHash(password);
 	}
 }
