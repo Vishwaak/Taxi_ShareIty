@@ -22,10 +22,12 @@ public class LoginRepository extends  AbstractRepository {
 			final PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, loginData.getUsername());
 			statement.setString(2, loginData.getPassword());
-			final ResultSet resultSet = statement.executeQuery();
+			final ResultSet resultSet = statement.executeQuery();                        
 			if(resultSet.first()){
 
 				final String pw = resultSet.getString("password");
+                                System.out.print("Hello2");
+                                System.out.print(pw);
 				if(pw.equals(loginData.getPassword())) return Boolean.TRUE;
 			}
 		}

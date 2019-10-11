@@ -15,10 +15,10 @@ public abstract class AbstractRepository {
 
 	public Connection getConnection() throws Exception {
 
-		final String URL = "jdbc:mysql://127.0.0.1:3306/taxi_sharelty";
+		final String URL = "jdbc:mysql://127.0.0.1:3307/test";
 		final String USERNAME="root";
-		final String PASSWORD="yourPassword";
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		final String PASSWORD="";
+		Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 		final String driver="";
 		try {
 			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);

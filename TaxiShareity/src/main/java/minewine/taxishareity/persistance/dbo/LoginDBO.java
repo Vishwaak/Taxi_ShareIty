@@ -14,7 +14,8 @@ public class LoginDBO {
 
 	public LoginDBO(final String username, final String password){
 		this.username = username;
-		this.password = Encrypt.toHash(password);
+                this.password = password;
+		//this.password = Encrypt.toHash(password);
 
 	}
 
@@ -29,6 +30,7 @@ public class LoginDBO {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = Encrypt.toHash(password);
+                this.password = password;
+		//this.password = Encrypt.toHash(password);
 	}
 }

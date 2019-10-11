@@ -1,6 +1,10 @@
 
-package com.mycompany.taxi_sharity;
+package minewine.taxishareity;
 
+import javax.swing.JFrame;
+import minewine.taxishareity.persistance.dbo.LoginDBO;
+import minewine.taxishareity.persistance.repository.LoginRepository;
+import javax.swing.JOptionPane;
 public class logging extends javax.swing.JFrame {
 
     /**
@@ -38,6 +42,11 @@ public class logging extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setForeground(new java.awt.Color(9, 103, 232));
         jLabel4.setText("New Register ? ");
@@ -103,6 +112,33 @@ public class logging extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+            //String Password = new String(jPasswordField1.getText());
+            // TODO Produces a error when Sent Directly to LoginDBO
+            JFrame popup = new JFrame();
+            //LoginDBO verify = new LoginDBO(jTextField1.getText(),Password);
+           LoginRepository verifer = new LoginRepository();
+           try
+           {
+               LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
+               System.out.print(jPasswordField1.getPassword());
+               if(verifer.login(verify) == true)
+               {
+                   JOptionPane.showMessageDialog(popup, "Succesful Login");   
+               }
+               else
+               {
+                   JOptionPane.showMessageDialog(popup, "Login failed");   
+               }
+               
+           }
+           catch(Exception e)
+           {
+                JOptionPane.showMessageDialog(popup, e);   
+           }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
    
     public static void main(String args[]) {
