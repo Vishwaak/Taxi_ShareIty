@@ -1,5 +1,5 @@
 
-package com.mycompany.taxi_sharity;
+package minewine.taxishareity;
 
 /**
  *
