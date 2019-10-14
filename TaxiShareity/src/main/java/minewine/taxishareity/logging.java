@@ -20,16 +20,12 @@ public class logging extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-
         jPasswordField1 = new javax.swing.JPasswordField();
-
         jButton1 = new javax.swing.JButton();
-
+        jLabel4 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
 
@@ -42,7 +38,7 @@ public class logging extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Welcome to Taxi_Sharity");
 
-        jLabel3.setText("Password");
+        jLabel3.setText("Passoword");
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -57,8 +53,18 @@ public class logging extends javax.swing.JFrame {
         jLabel4.setText("New Register ? ");
 
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,12 +131,14 @@ public class logging extends javax.swing.JFrame {
             //String Password = new String(jPasswordField1.getText());
             // TODO Produces a error when Sent Directly to LoginDBO
             JFrame popup = new JFrame();
+            System.out.print("Hello");
             //LoginDBO verify = new LoginDBO(jTextField1.getText(),Password);
            LoginRepository verifer = new LoginRepository();
            try
            {
                LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
                System.out.print(jPasswordField1.getPassword());
+               System.out.print("hello");
                if(verifer.login(verify) == true)
                {
                    JOptionPane.showMessageDialog(popup, "Succesful Login");   
@@ -147,6 +155,16 @@ public class logging extends javax.swing.JFrame {
            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        
+        new Login_Form().setVisible(true);
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+          
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
    
 
     public static void main(String args[]) {
@@ -155,24 +173,25 @@ public class logging extends javax.swing.JFrame {
 
             public void run() {
 
-                new logging().setVisible(true);
+                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                logging mine = new logging();
+                mine.setVisible(true);
+                mine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+               
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-
     private javax.swing.JPasswordField jPasswordField1;
-
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
