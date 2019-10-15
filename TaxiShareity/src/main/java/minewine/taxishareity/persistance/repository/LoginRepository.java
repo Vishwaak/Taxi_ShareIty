@@ -58,7 +58,6 @@ public class LoginRepository extends AbstractRepository {
             statement.setString(2, userData.getEmail());
             statement.setString(3, userData.getLoginData().getPassword());
             statement.setString(4, userData.getName());
-            statement.setString(5, userData.getSurname());
             statement.setString(6, userData.getContactNo());
             statement.setString(7, userData.getUserType().toString());
             return statement.execute();
@@ -70,7 +69,7 @@ public class LoginRepository extends AbstractRepository {
     private Boolean checkRegistrationNotEmpty(final RegisterUserDBO registerUserDBO) {
         if (StringUtils.isNullOrEmpty(registerUserDBO.getLoginData().getUsername()) || StringUtils.isNullOrEmpty(registerUserDBO.getLoginData().getPassword())
                 || StringUtils.isNullOrEmpty(registerUserDBO.getEmail()) || StringUtils.isNullOrEmpty(registerUserDBO.getName())
-                || StringUtils.isNullOrEmpty(registerUserDBO.getSurname()) || StringUtils.isNullOrEmpty(registerUserDBO.getContactNo()) || Objects
+                || StringUtils.isNullOrEmpty(registerUserDBO.getContactNo()) || Objects
                 .isNull(registerUserDBO.getUserType())) {
             return Boolean.FALSE;
         }
