@@ -3,7 +3,7 @@ package minewine.taxishareity.persistance.repository;
 import com.mysql.cj.util.StringUtils;
 import minewine.taxishareity.persistance.dbo.LoginDBO;
 import minewine.taxishareity.persistance.dbo.RegisterUserDBO;
-import minewine.taxishareity.utils.UserType;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,15 +52,14 @@ public class LoginRepository extends AbstractRepository {
         }
         try {
             final Connection conn = getConnection();
-            final String query = "insert into users(username, email, password,name,surname,contact_no, user_type) values (?,?,?,?,?,?,?)";
+            final String query = "insert into users(username, email, password,name,contact_no, user_type) values (?,?,?,?,?,?)";
             final PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, userData.getLoginData().getUsername());
             statement.setString(2, userData.getEmail());
             statement.setString(3, userData.getLoginData().getPassword());
             statement.setString(4, userData.getName());
-            statement.setString(5, userData.getSurname());
-            statement.setString(6, userData.getContactNo());
-            statement.setString(7, userData.getUserType().toString());
+            statement.setString(5, userData.getContactNo());
+            statement.setString(6, userData.getUserType());
             return statement.execute();
         } catch (Exception e) {
             throw new Exception("Error during registration");
@@ -70,8 +69,8 @@ public class LoginRepository extends AbstractRepository {
     private Boolean checkRegistrationNotEmpty(final RegisterUserDBO registerUserDBO) {
         if (StringUtils.isNullOrEmpty(registerUserDBO.getLoginData().getUsername()) || StringUtils.isNullOrEmpty(registerUserDBO.getLoginData().getPassword())
                 || StringUtils.isNullOrEmpty(registerUserDBO.getEmail()) || StringUtils.isNullOrEmpty(registerUserDBO.getName())
-                || StringUtils.isNullOrEmpty(registerUserDBO.getSurname()) || StringUtils.isNullOrEmpty(registerUserDBO.getContactNo()) || Objects
-                .isNull(registerUserDBO.getUserType())) {
+                || StringUtils.isNullOrEmpty(registerUserDBO.getContactNo()) || StringUtils
+                .isNullOrEmpty(registerUserDBO.getUserType())) {
             return Boolean.FALSE;
         }
         return Boolean.TRUE;
