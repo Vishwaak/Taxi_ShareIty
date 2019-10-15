@@ -126,7 +126,6 @@ public class logging extends javax.swing.JFrame {
            try
            {
                LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
-               System.out.print(jPasswordField1.getPassword());
                if(verifer.login(verify) == true)
                {
                    JOptionPane.showMessageDialog(popup, "Succesful Login");   

@@ -1,6 +1,12 @@
 
 package minewine.taxishareity;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import minewine.taxishareity.persistance.dbo.RegisterUserDBO;
+import minewine.taxishareity.persistance.repository.LoginRepository;
+
 
 /**
  *
@@ -166,6 +172,27 @@ public class Login_Form extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        LoginRepository Register_user = new LoginRepository();
+        JFrame popup = new JFrame();
+        try
+        {
+            
+            RegisterUserDBO Detail_user = new RegisterUserDBO(username.getText(),new String(password.getPassword()),email_id.getText(),name.getText(),contact_no.getText(),Combo.getSelectedItem().toString());
+            if(!Register_user.registerUser(Detail_user))
+            {
+                JOptionPane.showMessageDialog(popup, "Succesful Registration"); 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(popup, "Registration Failed"); 
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(popup, "Choose a Different username"); 
+            
+        }
+            
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
