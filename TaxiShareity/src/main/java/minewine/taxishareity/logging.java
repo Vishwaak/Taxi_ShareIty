@@ -20,16 +20,12 @@ public class logging extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-
         jPasswordField1 = new javax.swing.JPasswordField();
-
         jButton1 = new javax.swing.JButton();
-
+        jLabel4 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
 
@@ -42,21 +38,21 @@ public class logging extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Welcome to Taxi_Sharity");
 
-        jLabel3.setText("Password");
+        jLabel3.setText("Passoword");
 
         jPasswordField1.setText("jPasswordField1");
 
         jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setForeground(new java.awt.Color(9, 103, 232));
         jLabel4.setText("New Register ? ");
 
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("No");
 
@@ -147,6 +143,12 @@ public class logging extends javax.swing.JFrame {
            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        new Login_Form().setVisible(true);
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
    
 
     public static void main(String args[]) {
@@ -162,17 +164,13 @@ public class logging extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-
     private javax.swing.JPasswordField jPasswordField1;
-
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
