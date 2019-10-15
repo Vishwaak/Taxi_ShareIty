@@ -132,11 +132,11 @@ public class logging extends javax.swing.JFrame {
            try
            {
                LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
-<<<<<<< HEAD
-=======
+
+
                System.out.print(jPasswordField1.getPassword());
                System.out.print("hello");
->>>>>>> master
+
                if(verifer.login(verify) == true)
                {
                    JOptionPane.showMessageDialog(popup, "Succesful Login");   
@@ -154,22 +154,18 @@ public class logging extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-<<<<<<< HEAD
+
         // TODO add your handling code here:
-=======
-        
->>>>>>> master
         new Login_Form().setVisible(true);
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-<<<<<<< HEAD
-=======
+
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
           
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
->>>>>>> master
+
    
 
     public static void main(String args[]) {
