@@ -55,6 +55,11 @@ public class logging extends javax.swing.JFrame {
         });
 
         jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,11 +126,17 @@ public class logging extends javax.swing.JFrame {
             //String Password = new String(jPasswordField1.getText());
             // TODO Produces a error when Sent Directly to LoginDBO
             JFrame popup = new JFrame();
+            System.out.print("Hello");
             //LoginDBO verify = new LoginDBO(jTextField1.getText(),Password);
            LoginRepository verifer = new LoginRepository();
            try
            {
                LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
+<<<<<<< HEAD
+=======
+               System.out.print(jPasswordField1.getPassword());
+               System.out.print("hello");
+>>>>>>> master
                if(verifer.login(verify) == true)
                {
                    JOptionPane.showMessageDialog(popup, "Succesful Login");   
@@ -143,11 +154,22 @@ public class logging extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
+=======
+        
+>>>>>>> master
         new Login_Form().setVisible(true);
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+          
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+>>>>>>> master
    
 
     public static void main(String args[]) {
@@ -156,7 +178,12 @@ public class logging extends javax.swing.JFrame {
 
             public void run() {
 
-                new logging().setVisible(true);
+                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                logging mine = new logging();
+                mine.setVisible(true);
+                mine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+               
+                
             }
         });
     }
