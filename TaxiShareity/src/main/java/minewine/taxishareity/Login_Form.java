@@ -1,6 +1,5 @@
 
 package minewine.taxishareity;
-import javax.swing.ImageIcon;
 
 
 /**
@@ -21,9 +20,6 @@ public class Login_Form extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        imageLabel = new java.swing.JLabel();
-        ImageIcon icon=new ImageIcon("logo.jpeg");
-        imageLabel.setIcon(icon);
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -39,7 +35,6 @@ public class Login_Form extends javax.swing.JFrame {
         jPasswordField2 = new javax.swing.JPasswordField();
 
         jComboBox1 = new javax.swing.JComboBox<>();
-        imageLabel.setBounds(250,50,50,30);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(247, 246, 254));
 
