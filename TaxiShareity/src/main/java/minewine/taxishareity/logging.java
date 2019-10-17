@@ -156,7 +156,8 @@ public class logging extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
 
         // TODO add your handling code here:
-        new Login_Form().setVisible(true);
+       // new Login_Form().setVisible(true);
+        new Student_dashboard().setVisible(true);
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
