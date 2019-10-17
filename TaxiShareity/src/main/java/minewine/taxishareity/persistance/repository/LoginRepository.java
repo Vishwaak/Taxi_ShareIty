@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Objects;
+import minewine.taxishareity.persistance.dbo.BookRide;
 
 /**
  * @author andrea.esposito
@@ -75,6 +76,24 @@ public class LoginRepository extends AbstractRepository {
         }
         return Boolean.TRUE;
 
+    }
+    public Boolean Bookride_user(final BookRide usercontents)throws Exception{
+        try{
+            final Connection conn = getConnection();
+            final String query = "insert into booking(pickup_loc,drop_loc,No_people,time,date) values (?,?,?,?,?)";
+            final PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, usercontents.getPickup_loc());
+            statement.setString(2, usercontents.getDrop_loc());
+            statement.setString(3, usercontents.getNo_people());
+            statement.setString(4, usercontents.getTime());
+            statement.setString(5, usercontents.getDate());
+            return statement.execute();   
+        }
+        catch(Exception e)
+        {
+            throw new Exception("Error During booking");
+        }
+        
     }
 
 }
