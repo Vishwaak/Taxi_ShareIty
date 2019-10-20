@@ -53,6 +53,11 @@ public class logging extends javax.swing.JFrame {
         jLabel4.setText("New Register ? ");
 
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("No");
 
