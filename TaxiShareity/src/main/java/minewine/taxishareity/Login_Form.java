@@ -8,6 +8,7 @@ import minewine.taxishareity.persistance.dbo.RegisterUserDBO;
 import minewine.taxishareity.persistance.repository.LoginRepository;
 
 
+
 /**
  *
  * @author xerous
@@ -40,6 +41,16 @@ public class Login_Form extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
+
+
+        jTextField1 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordField2 = new javax.swing.JPasswordField();
+
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(247, 246, 254));
