@@ -60,11 +60,6 @@ public class logging extends javax.swing.JFrame {
         });
 
         jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,17 +67,21 @@ public class logging extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(229, 229, 229)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jRadioButton1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(173, 173, 173)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRadioButton2)
+                                .addGap(6, 6, 6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(68, 68, 68)))))
+                .addContainerGap(82, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,14 +130,15 @@ public class logging extends javax.swing.JFrame {
             //String Password = new String(jPasswordField1.getText());
             // TODO Produces a error when Sent Directly to LoginDBO
             JFrame popup = new JFrame();
-            System.out.print("Hello");
             //LoginDBO verify = new LoginDBO(jTextField1.getText(),Password);
            LoginRepository verifer = new LoginRepository();
            try
            {
                LoginDBO verify = new LoginDBO(jTextField1.getText(),new String(jPasswordField1.getPassword()));
+
+
                System.out.print(jPasswordField1.getPassword());
-               System.out.print("hello");
+
                if(verifer.login(verify) == true)
                {
                    JOptionPane.showMessageDialog(popup, "Succesful Login");   
@@ -156,14 +156,18 @@ public class logging extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        
-        new Login_Form().setVisible(true);
+
+        // TODO add your handling code here:
+       // new Login_Form().setVisible(true);
+        new Student_dashboard().setVisible(true);
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
           
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
 
    
 
@@ -171,12 +175,13 @@ public class logging extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
 
                 // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                logging mine = new logging();
-                mine.setVisible(true);
-                mine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                
+                
+                new logging().setVisible(true);
                
                 
             }
