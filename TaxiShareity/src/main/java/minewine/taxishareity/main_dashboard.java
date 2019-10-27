@@ -1,9 +1,12 @@
 
-package minewine;
+package minewine.taxishareity;
 
-import java.awt.BorderLayout;
+import java.sql.ResultSet;
 import javax.swing.JFrame;
-import minewine.taxishareity.Student_dashboard;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import minewine.taxishareity.persistance.repository.LoginRepository;
+import net.proteanit.sql.DbUtils;
 
 
 public class main_dashboard extends javax.swing.JFrame {
@@ -21,7 +24,7 @@ public class main_dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        model = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -38,7 +41,7 @@ public class main_dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        model.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -49,7 +52,7 @@ public class main_dashboard extends javax.swing.JFrame {
                 "Date", "Time", "Pickup", "no_people"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(model);
 
         jLabel1.setForeground(new java.awt.Color(160, 10, 5));
         jLabel1.setText("Welcome Mr X ");
@@ -168,8 +171,8 @@ public class main_dashboard extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
          JFrame f = new JFrame();
+        setUpTableData();
         Student_dashboard minewine = new Student_dashboard();
-        System.out.print("h");
         f.setSize(500, 344);
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -178,6 +181,20 @@ public class main_dashboard extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
+    public void setUpTableData() {
+    try{
+        TableModel minewine = null; 
+        LoginRepository update_content = new LoginRepository();
+        // query and result 
+        //upate the tabel
+        model.setModel(DbUtils.resultSetToTableModel(update_content.Content_Table()));
+        
+    }
+    catch(Exception e)
+    {
+        JOptionPane.showMessageDialog(null, e);
+    }
+}
     /**
      * @param args the command line arguments
      */
@@ -207,6 +224,6 @@ public class main_dashboard extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable model;
     // End of variables declaration//GEN-END:variables
 }

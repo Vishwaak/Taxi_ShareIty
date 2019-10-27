@@ -67,21 +67,17 @@ public class logging extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton2)
-                                .addGap(6, 6, 6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                    .addComponent(jRadioButton2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(229, 229, 229)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jRadioButton1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(173, 173, 173)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +137,8 @@ public class logging extends javax.swing.JFrame {
 
                if(verifer.login(verify) == true)
                {
-                   JOptionPane.showMessageDialog(popup, "Succesful Login");   
+                   JOptionPane.showMessageDialog(popup, "Succesful Login");
+                   new main_dashboard().setVisible(true);
                }
                else
                {
@@ -158,8 +155,8 @@ public class logging extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
 
         // TODO add your handling code here:
-       // new Login_Form().setVisible(true);
-        new Student_dashboard().setVisible(true);
+        new Login_Form().setVisible(true);
+        
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
@@ -180,8 +177,12 @@ public class logging extends javax.swing.JFrame {
 
                 // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 
+                logging minewine = new logging();
+                minewine.setVisible(true);
+                //f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                minewine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 
-                new logging().setVisible(true);
+                 // new logging().setVisible(true);
                
                 
             }
