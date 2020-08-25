@@ -8,6 +8,7 @@ import minewine.taxishareity.persistance.dbo.RegisterUserDBO;
 import minewine.taxishareity.persistance.repository.LoginRepository;
 
 
+
 /**
  *
  * @author xerous
@@ -242,6 +243,7 @@ public class Login_Form extends javax.swing.JFrame {
             public void run() {
 
                 new Login_Form().setVisible(true);
+                System.out.print("Hello world");
             }
         });
     }

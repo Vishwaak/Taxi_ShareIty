@@ -1,5 +1,12 @@
 
-package com.mycompany.taxi_sharity;
+package minewine.taxishareity;
+
+import java.sql.ResultSet;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import minewine.taxishareity.persistance.repository.LoginRepository;
+import net.proteanit.sql.DbUtils;
 
 
 public class main_dashboard extends javax.swing.JFrame {
@@ -17,11 +24,11 @@ public class main_dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-
-        jTable1 = new javax.swing.JTable();
-
+        model = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -32,13 +39,9 @@ public class main_dashboard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-
+        model.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -49,7 +52,7 @@ public class main_dashboard extends javax.swing.JFrame {
                 "Date", "Time", "Pickup", "no_people"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(model);
 
         jLabel1.setForeground(new java.awt.Color(160, 10, 5));
         jLabel1.setText("Welcome Mr X ");
@@ -58,6 +61,11 @@ public class main_dashboard extends javax.swing.JFrame {
         jLabel2.setText("Book a new Ride ?");
 
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("No");
 
@@ -160,6 +168,33 @@ public class main_dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+         JFrame f = new JFrame();
+        setUpTableData();
+        Student_dashboard minewine = new Student_dashboard();
+        f.setSize(500, 344);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        f.getContentPane().add(minewine);
+        
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    public void setUpTableData() {
+    try{
+        TableModel minewine = null; 
+        LoginRepository update_content = new LoginRepository();
+        // query and result 
+        //upate the tabel
+        model.setModel(DbUtils.resultSetToTableModel(update_content.Content_Table()));
+        
+    }
+    catch(Exception e)
+    {
+        JOptionPane.showMessageDialog(null, e);
+    }
+}
     /**
      * @param args the command line arguments
      */
@@ -176,6 +211,8 @@ public class main_dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -184,14 +221,9 @@ public class main_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-
     private javax.swing.JScrollPane jScrollPane1;
-
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable model;
     // End of variables declaration//GEN-END:variables
 }

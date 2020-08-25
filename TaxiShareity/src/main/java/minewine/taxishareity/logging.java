@@ -43,6 +43,11 @@ public class logging extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setForeground(new java.awt.Color(9, 103, 232));
         jLabel4.setText("New Register ? ");
@@ -55,11 +60,6 @@ public class logging extends javax.swing.JFrame {
         });
 
         jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,7 +126,6 @@ public class logging extends javax.swing.JFrame {
             //String Password = new String(jPasswordField1.getText());
             // TODO Produces a error when Sent Directly to LoginDBO
             JFrame popup = new JFrame();
-            System.out.print("Hello");
             //LoginDBO verify = new LoginDBO(jTextField1.getText(),Password);
            LoginRepository verifer = new LoginRepository();
            try
@@ -135,11 +134,11 @@ public class logging extends javax.swing.JFrame {
 
 
                System.out.print(jPasswordField1.getPassword());
-               System.out.print("hello");
 
                if(verifer.login(verify) == true)
                {
-                   JOptionPane.showMessageDialog(popup, "Succesful Login");   
+                   JOptionPane.showMessageDialog(popup, "Succesful Login");
+                   new main_dashboard().setVisible(true);
                }
                else
                {
@@ -156,8 +155,8 @@ public class logging extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
 
         // TODO add your handling code here:
-       // new Login_Form().setVisible(true);
-        new Student_dashboard().setVisible(true);
+        new Login_Form().setVisible(true);
+        
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
@@ -173,12 +172,17 @@ public class logging extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
 
                 // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                logging mine = new logging();
-                mine.setVisible(true);
-                mine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                
+                logging minewine = new logging();
+                minewine.setVisible(true);
+                //f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                minewine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                
+                 // new logging().setVisible(true);
                
                 
             }

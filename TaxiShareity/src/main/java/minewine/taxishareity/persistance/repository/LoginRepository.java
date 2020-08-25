@@ -95,5 +95,22 @@ public class LoginRepository extends AbstractRepository {
         }
         
     }
+    
+    public ResultSet Content_Table() throws Exception
+    {
+            ResultSet content = null;
+        try {
+            final Connection conn = getConnection();
+            final String query = "select * from booking";
+            final PreparedStatement statement = conn.prepareStatement(query);
+            content =  statement.executeQuery();
+            
+        }
+        catch(Exception e)
+        {
+            throw new Exception("Coudn't updat the tabel");
+        }
+        return content; 
+    }
 
 }
