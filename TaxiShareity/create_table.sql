@@ -12,4 +12,5 @@ create table users(
 );
 
 insert into users(username, email, password,name) values ('espoand','aaa@bbb.com','helloWorld','Andrea');
+insert into users(username,email,password,name,surname,contact_no,user_type ENUM) values ('george26', 'george@abd.com','geo123','george','jobs','2210864','STUDENT');
 
